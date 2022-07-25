@@ -54,15 +54,78 @@
     <main>
         <div class="content">
             <div class="container mt-5 p-4">
-                <h1>APP UI GOES HERE</h1>
-                <input type="text" id="message" placeholder="Enter a Message"/>
-                <button id="btnSubmit" class="btn btn-primary">Display Message</button>
+                <div class="row">
+                    <div class="col-3 p-5 border">
+                        <label for="loanAmount">Loan Amount</label>
+                        <input type="text" id="loanAmount">
+
+                        <label for="term">Term</label>
+                        <input type="text" id="term">
+
+                        <label for="interestRate">Interest Rate</label>
+                        <input type="text" id="interestRate">
+
+                        <button type="button" id="btnSubmit" class="btn btn-primary">Calculate</button>
+                    </div>
+
+                    <div class="col-9"></div>
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Month</th>
+                            <th>Payment</th>
+                            <th>Principal</th>
+                            <th>Interest</th>
+                            <th>Total Interest</th>
+                            <th>Balance</th>
+                        </tr>
+                        <tbody id="rateBody">
+                            <!--javascript will post results HERE-->
+
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </main>
 
 
+   <footer class="footer" >
+    <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-lg-3 gy-2">
+            <div class="col order-last order-md-first d-flex justify-content-center justify-content-lg-start">
+                <span class="muted">&copy;Evan LaVack 2022 | evandaniel@me.com</span>
+            </div>
+            <div class="col text-center">
+                <div>
+                    <img src="#">
+                </div>
+                <div class="col d-flex justify-content-center justify-content-lg-end">
+                    <div class="row">
+                        <div class="col social"><a href="#"><i class="bi bi-linkedin"></i></a></div>
+                        <div class="col social"><a href="#"><i class="bi bi-twitter"></i></a></div>
+                         <div class="col social"><a href="#"><i class="bi bi-github"></i></a></div>
+                    </div>
+                </div>
+            </div>
     </footer>
+
+
+    <!--templates-->
+    <template id="statTemplate">
+        <tr>
+            <td data-id="month"></td>
+            <td data-id="payment"></td>
+            <td data-id="principal"></td>
+            <td data-id="interest"></td>
+            <td data-id="totalInterest"></td>
+            <td data-id="balance"></td>
+        </tr>
+    </template>
+
+
+
+
+
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
@@ -71,7 +134,7 @@
 
     <script src="/js/site.js"></script>
     <script>
-        document.getElementById("btnSubmit").addEventListener("click",getValue2);
+        document.getElementById("btnSubmit").addEventListener("click",getValues);
     </script>
  </body>
 

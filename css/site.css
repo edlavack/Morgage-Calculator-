@@ -73,7 +73,9 @@ body{
     border-color: purple !important; 
 }
 
-
+.border{
+    color:black;
+}
 
 /*bs buttons overrides end*/
 
